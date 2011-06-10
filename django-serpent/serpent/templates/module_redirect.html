@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>seRPEnt Redirect</title>
+     <script type="text/javascript">
+     function load()
+     {
+          window.document.test.submit();
+          return;
+     }
+     </script>
+</head>
+<body onload="load()">
+<form name="test" method="post" action="../">
+    <input type="hidden" name="module_id" value="{{ module_id }}"/>
+</form>
+</body>
+</html>

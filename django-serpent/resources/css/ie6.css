@@ -1,0 +1,5 @@
+.f-x1 { height:100% }
+.f-x2 { height:1px }
+.f-x3 { display:inline }
+img { behavior: url("pngbehavior.htc"); }
+div#PageDiv { height:100% }
