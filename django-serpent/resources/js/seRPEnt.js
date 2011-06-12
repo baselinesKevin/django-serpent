@@ -18,7 +18,7 @@
 	
   	function done(res, status) {
 		//Internet Explorer does not like the next line ... not sure it's needed
-		//var data = eval('(' + res.responseText + ')');
+		var data = eval('(' + res.responseText + ')');
 		if (status == "success"){
 			window.location=window.location + "download/" + data.filename;
 		}
