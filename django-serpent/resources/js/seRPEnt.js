@@ -1,6 +1,6 @@
 	function createrequest(module_id) {
 	    var data = {"":""};
-	    var args = { type:"POST", url:module_id+"/", data:data, complete:done, success:done2 };
+	    var args = { type:"POST", url:module_id+"/", cache:false, data:data, complete:done, success:done2 };
 	    $("#jobstatus").html('<p class="style1 f-lp">Sending job to server...</p>');
 	    $.ajax(args);
 	    $("#jobstatus").html('<p class="style1 f-lp">Executing job on server. Please wait.</p>');

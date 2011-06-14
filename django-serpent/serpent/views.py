@@ -49,7 +49,7 @@ def createRPEJob(request, module_id):
         #submit job to RPE - this doesn't work on Apache2 for some reason
         os.system( settings.PATH_TO_RPE_LAUNCHER + t.name)
 
-        to_return = {'filename' : rawfilename, 'msg' : settings.PATH_TO_RPE_LAUNCHER + t.name}
+        to_return = {'filename' : rawfilename, 'msg' : settings.PATH_TO_RPE_LAUNCHER + rawfilename + '.dsx'}
         serialized = simplejson.dumps(to_return)
         return HttpResponse(serialized, mimetype='application/javascript')
     else:
@@ -61,7 +61,10 @@ def createRPEJob(request, module_id):
 def download(request, filename):
     if (filename!=None):
         filename = "c:\\temp\\" + filename + ".doc"
-        file = open(filename,"rb")
+        try:
+            file = open(filename,"rb")
+        except IOError:
+            return HttpResponse("ERROR. The file " + filename + " could not be found on the server")
         mimetype = mimetypes.guess_type(filename)[0]
         if not mimetype: mimetype = "application/octet-stream"
         response = HttpResponse(file.read(), mimetype=mimetype)
