@@ -9,7 +9,8 @@ urlpatterns = patterns('',
     # Example:
     #(r'^mysite/', include('mysite.foo.urls')),
 
-    (r'^$', 'django-serpent.serpent.views.index'),
+    url(r'^jobs/'   , include ('CommandJob.urls')),    
+        
     (r'^resources/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
     (r'^serpent/$', 'django-serpent.serpent.views.index'),
     (r'^serpent/(?P<module_id>[0-9a-f]{8})/$', 'django-serpent.serpent.views.createRPEJob'),
