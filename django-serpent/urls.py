@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     (r'^serpent/(?P<module_id>[0-9a-f]{8})/$', 'django-serpent.serpent.views.createRPEJob'),
     (r'^serpent/download/$', 'django-serpent.serpent.views.download'),
     (r'^serpent/download/(?P<filename>.*)$', 'django-serpent.serpent.views.download'),
+    (r'^doors/$', 'doorsweb.views.index'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
