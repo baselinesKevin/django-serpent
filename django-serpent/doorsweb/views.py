@@ -1,15 +1,6 @@
-import subprocess
 import os
-import tempfile
-import re
-import mimetypes
-from django.template import RequestContext
-from django.http import HttpResponse, HttpResponseServerError
-from django.utils import simplejson
 from django.shortcuts import render_to_response
-from django.utils.encoding import smart_str
-from django.conf import settings
-from xml.etree.ElementTree import ElementTree
+
 
 # Create your views here.
 
