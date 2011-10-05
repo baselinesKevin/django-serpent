@@ -1,4 +1,5 @@
 import os
+from classes.DXLRunner import DXLRunner, DXLServerRunner
 from django.shortcuts import render_to_response
 
 
@@ -15,7 +16,7 @@ def index(request):
      #dxlipf.exe can be used to read a file
      #dxlips.exe can be used to read a string
      
-     DOORS_COMMAND = "C:/Program Files/IBM/Rational/DOORS/bin/dxlips.exe"
-     PARAMETERS = r'ack \"Hello World!\"'
-     os.popen(r'call "%s" "%s"' %(DOORS_COMMAND, PARAMETERS) )
+     d = DXLRunner()
+     dx = DXLServerRunner()
+     dx.run_dxl(r'ack \"Hello World!\"')
      return render_to_response('status.html', {})
